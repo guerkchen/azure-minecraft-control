@@ -1,0 +1,22 @@
+{
+  "name": "azure-minecraft-control",
+  "version": "1.0.0",
+  "main": "src/functions/*.js",
+  "type": "module",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@azure/identity": "^4.5.0",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^3.3.2",
+    "promise-socket": "^8.0.0"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "^4.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
