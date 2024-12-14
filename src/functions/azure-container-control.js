@@ -55,7 +55,6 @@ export async function getContainerState(subscriptionId, resourceGroup, container
     });
 
     var respJson = JSON.parse(await resp.text());
-    console.log(`received response from Azure: ${JSON.stringify(respJson)}`);
 
     const properties = respJson.properties.containers.filter(e => e.name = containerGroup)[0].properties;
     // 'properties' always exists, but instanceView and currentState might not
@@ -64,7 +63,7 @@ export async function getContainerState(subscriptionId, resourceGroup, container
         : { state: "Terminated", stateSince: "a long time" };
     return {
         "state": currentState.state,
-        "stateSince": (currentState.finishTime || "a long time"),
+        "stateSince": (currentState.startTime || currentState.finishTime || "a long time"),
         "fqdn": properties?.ipAddress?.fqdn,
     }
 }
