@@ -60,5 +60,3 @@ app.timer("azure-minecraft-control", {
         await main(ctx)
     }
 })
-
-main(console)
